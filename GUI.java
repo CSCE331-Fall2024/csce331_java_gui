@@ -29,7 +29,7 @@ public class GUI extends JFrame implements ActionListener {
         }
         JOptionPane.showMessageDialog(null, "Opened database successfully");
 
-        String name = "";
+        String data = "";
         try {
             //create a statement object
             Statement stmt = conn.createStatement();
@@ -40,7 +40,7 @@ public class GUI extends JFrame implements ActionListener {
             ResultSet result = stmt.executeQuery(sqlStatement);
             while (result.next()) {
                 // TODO specify the column name
-                name += result.getString("COLUMN NAME HERE") + "\n";
+                data += result.getString("COLUMN NAME HERE") + "\n";
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
